@@ -32,7 +32,6 @@ Things you may want to cover:
 |image|string| |
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|time|timestamp|null: false|
 
 ### Association
 - belongs_to :user
