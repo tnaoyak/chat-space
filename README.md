@@ -23,12 +23,12 @@ Things you may want to cover:
 
 * ...
 
-## productsテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|text|text| |
+|message|text| |
 |image|string| |
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -48,7 +48,7 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
-- has_many :products
+- has_many :messages
 - has_many :groups, through: :users_groups
 
 ## groupsテーブル
@@ -59,7 +59,7 @@ Things you may want to cover:
 |group_name|string|null: false, unique: true|
 
 ### Association
-- has_many :products
+- has_many :messages
 - has_many :users, through: :users_groups
 
 ## users_groupsテーブル
