@@ -1,3 +1,16 @@
 @import "font-awesome";
 @import "./reset";
 @import "./_variable";
+
+
+.body {
+  background-color: green
+}
+
+.leftbar {
+  background-color: red
+  &__top {
+    background-color: #253141;
+  }
+}
+
