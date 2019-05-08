@@ -59,7 +59,7 @@
     font-weight: bold;
     padding: 20px 20px 0 20px;
     box-sizing: border-box;
-    &__link {
+    &__content {
       padding-bottom: 40px;
       &__name {
         font-size: 15px;
@@ -103,7 +103,7 @@
       color: #999999;
     }
   }
-  &__content {
+  &__post {
     background-color: #fafafa;
     height: calc(100vh - 190px);
     width: calc(100vw - 300px);
@@ -142,13 +142,13 @@
   height: 90px;
   width: calc(100vw - 300px);
   margin-bottom: 0;
-  &__content {
+  &__box {
     display: flex;
     &__form {
       background-color: white;
       width: 100%;
       position: relative;
-      &__text-box {
+      &__text {
         height: 50px;
         width: 100%;
         color: $light_black;

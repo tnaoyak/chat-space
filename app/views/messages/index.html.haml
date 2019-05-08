@@ -8,22 +8,7 @@
       %p(class="header-bar__text") グループを作成しました
 
     %div(class="chat")
-
-      %div(class="leftbar")
-        %div(class="leftbar__user")
-          %p(class="leftbar__user__name") ユーザー名
-          %div(class="leftbar__user__link")
-            %a(href="/" class="fa fa-edit")
-            %a(href="/" class="fa fa-cog")
-
-        %div(class="leftbar__group")
-          %div(class="leftbar__group__link")
-            %p(class="leftbar__group__link__name") グループ名
-            %p(class="leftbar__group__link__comment") 先頭コメント
-
-          %div(class="leftbar__group__link")
-            %p(class="leftbar__group__link__name") グループ名
-            %p(class="leftbar__group__link__comment") 先頭コメント
+      = render partial: "leftbar"
 
       %div(class="chat-area")
         %div(class="chat-area__group")
@@ -32,24 +17,17 @@
             %a(href="/" class="chat-area__group__top__edit-btn") Edit
           %p(class="chat-area__group__member-name") Member：メンバー名
 
-        %div(class="chat-area__content")
-          %div(class="chat-area__content__message")
-            %div(class="chat-area__content__message__contributor")
-              %p(class="chat-area__content__message__contributor__name") 投稿者名
-              %p(class="chat-area__content__message__contributor__date") 投稿日時
-            %p(class="chat-area__content__message__text") 投稿内容
-
-          %div(class="chat-area__content__message")
-            %div(class="chat-area__content__message__contributor")
-              %p(class="chat-area__content__message__contributor__name") 投稿者名
-              %p(class="chat-area__content__message__contributor__date") 投稿日時
-            %p(class="chat-area__content__message__text") 投稿内容
+        %div(class="chat-area__post")
+          %div(class="chat-area__post__message")
+            %div(class="chat-area__post__message__contributor")
+              %p(class="chat-area__post__message__contributor__name") 投稿者名
+              %p(class="chat-area__post__message__contributor__date") 投稿日時
+            %p(class="chat-area__post__message__text") 投稿内容
 
         %div(class="chat-footer")
-          %div(class="chat-footer__content")
-            %div(class="chat-footer__content__form")
-              %input(class="chat-footer__content__form__text-box" placeholder="type a message")
-              %label.upload-label(for="upload-icon" class="chat-footer__content__form__icon")
+          %div(class="chat-footer__box")
+            %div(class="chat-footer__box__form")
+              %input(class="chat-footer__box__form__text" placeholder="type a message")
+              %label.upload-label(for="upload-icon" class="chat-footer__box__form__icon")
                 %i(class="fa fa-picture-o")
-                -# = f.file_field :image, id: "upload-icon"
-            %a(href="/" class="chat-footer__content__send-btn") Send
+            %a(href="/" class="chat-footer__box__send-btn") Send
