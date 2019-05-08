@@ -7,56 +7,7 @@
   display: flex;
 }
 
-.leftbar {
-  width: 300px;
-  &__user {
-    background-color: #253141;
-    height: 100px;
-    width: 300px;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    &__name {
-      margin: 0 20px;
-      font-size: 16px;
-    }
-    &__link {
-      display: flex;
-      margin-right: 0;
-      margin-left: auto;
-      padding-right: 20px;
-      .fa.fa-edit {
-        text-decoration: none;
-        color: white;
-      }
-      .fa.fa-cog {
-        margin-left: 0.3rem;
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
-  &__group {
-    background-color: #2f3e51;
-    width: 300px;
-    height: calc(100vh - 100px);
-    color: white;
-    font-weight: bold;
-    padding: 20px 20px 0 20px;
-    box-sizing: border-box;
-    &__content {
-      padding-bottom: 40px;
-      &__name {
-        font-size: 15px;
-        padding-bottom: 5px;
-      }
-      &__comment {
-        font-size: 11px;
-      }
-    }
-  }
-}
+
 
 .chat-area {
   &__group {
