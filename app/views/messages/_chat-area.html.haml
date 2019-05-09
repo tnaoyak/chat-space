@@ -2,7 +2,7 @@
   %div(class="chat-area__group")
     %div(class="chat-area__group__top")
       %p(class="chat-area__group__top__name") グループ名
-      %a(href="/" class="chat-area__group__top__edit-btn") Edit
+      = link_to "Edit", "/", class: "chat-area__group__top__edit-btn"
     %p(class="chat-area__group__member-name") Member：メンバー名
 
   %div(class="chat-area__post")
@@ -19,4 +19,4 @@
         %label.upload-label(for="upload-icon" class="chat-footer__box__form__icon")
           %i(class="fa fa-picture-o")
           %input(type="file" class="chat-footer__box__form__icon__btn" id="upload-icon")
-      %a(href="/" class="chat-footer__box__send-btn") Send
+      = link_to "Send", "/", class: "chat-footer__box__send-btn"
