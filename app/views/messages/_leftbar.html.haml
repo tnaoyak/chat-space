@@ -1,0 +1,11 @@
+%div(class="leftbar")
+  %div(class="leftbar__user")
+    %p(class="leftbar__user__name") ユーザー名
+    %div(class="leftbar__user__link")
+      = link_to "", "/", class: "fa fa-edit"
+      = link_to "", "/", class: "fa fa-cog"
+
+  %div(class="leftbar__group")
+    %div(class="leftbar__group__content")
+      %p(class="leftbar__group__content__name") グループ名
+      %p(class="leftbar__group__content__comment") 先頭コメント
