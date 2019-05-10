@@ -2,20 +2,22 @@
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
       %h2 Log in
+      %div(class="account-page__inner--left__line")
       %h5 登録しているユーザーでログイン
-      = render "devise/shared/links"
+      %div(class="account-page__inner--left__link")
+        = render "devise/shared/links"
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           .field-label
             = f.label :email
           .field-input
-            = f.email_field :email, autofocus: true
+            = f.email_field :email, autofocus: true, class: "field-input__text"
           .field
             .field-label
               = f.label :password
               %i (英数字8文字以上)
             .field-input
-              = f.password_field :password, autocomplete: "off"
+              = f.password_field :password, autocomplete: "off", class: "field-input__text"
           .actions
             = f.submit "Log in", class: 'btn'
