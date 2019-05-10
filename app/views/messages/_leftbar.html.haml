@@ -3,7 +3,7 @@
     %p(class="leftbar__user__name") 
       =current_user.name
     %div(class="leftbar__user__link")
-      = link_to "", "/", class: "fa fa-edit"
+      = link_to "", new_group_path, class: "fa fa-edit"
       = link_to "", edit_user_path(current_user.id), class: "fa fa-cog"
 
   %div(class="leftbar__group")
