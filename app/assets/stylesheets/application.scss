@@ -3,9 +3,18 @@
 @import "./reset";
 @import "./config/variable";
 
+@import "./mixin/mixin";
+
 @import "./style";
 
-@import "./modules/header-bar";
+@import "modules/flash";
 @import "./modules/leftbar";
 @import "./modules/chat-area";
 @import "./modules/chat-footer";
+
+@import "./modules/user";
+
+
+.body {
+  box-sizing: border-box;
+}
