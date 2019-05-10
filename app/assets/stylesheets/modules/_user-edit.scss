@@ -1,0 +1,76 @@
+.account-page {
+  box-sizing: border-box;
+}
+
+.account-page__inner {
+  display: flex;
+  width: 980px;
+  margin: 60px auto;
+  padding: 60px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  &--left {
+    width: 50%;
+    box-sizing: border-box;
+    & h2 {
+      letter-spacing: 3px;
+      font-size: 40px;
+      font-weight: 200;
+    }
+    &__line {
+      content: '';
+      display: block;
+      width: 60px;
+      margin-top: 5px;
+      border-bottom: 1px solid #38aef0;
+    }
+    & h5 {
+      margin: 10px 0 20px 0;
+      font-size: 14px;
+      font-weight: 200;
+    }
+    &__link {
+      .btn {
+        margin-top: 20px;
+        color: #fff;
+        background-color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        @include box-btn;
+      }
+    }
+  }
+  &--right {
+    width: 50%;
+    box-sizing: border-box;
+    .field {
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      .field-label {
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 200;
+      }
+      .field-input {
+        &__text {
+          box-sizing: border-box;
+          width: 100%;
+          letter-spacing: 1px;
+          padding: 10px;
+        }
+      }
+    }
+    .actions {
+      .btn {
+        @include box-btn;
+        margin-top: 20px;
+        color: #fff;
+        background-color: #38aef0;
+      }
+    }
+  }
+
+}

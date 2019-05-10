@@ -1,0 +1,11 @@
+// 四角いボタン、ボタン状のリンクなど
+@mixin box-btn {
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+}
