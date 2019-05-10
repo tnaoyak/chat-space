@@ -53,6 +53,9 @@
         letter-spacing: 1px;
         font-size: 14px;
         font-weight: 200;
+        & i {
+          font-size: 11px;
+        }
       }
       .field-input {
         &__text {
