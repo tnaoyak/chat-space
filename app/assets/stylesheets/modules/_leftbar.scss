@@ -32,18 +32,21 @@
     background-color: #2f3e51;
     width: 300px;
     height: calc(100vh - 100px);
-    color: white;
-    font-weight: bold;
     padding: 20px 20px 0 20px;
     box-sizing: border-box;
-    &__content {
-      padding-bottom: 40px;
-      &__name {
-        font-size: 15px;
-        padding-bottom: 5px;
-      }
-      &__comment {
-        font-size: 11px;
+    &__link {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      &__content {
+        padding-bottom: 40px;
+        &__name {
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+        &__comment {
+          font-size: 11px;
+        }
       }
     }
   }
