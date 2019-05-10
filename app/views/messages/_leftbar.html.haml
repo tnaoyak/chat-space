@@ -1,12 +1,15 @@
 %div(class="leftbar")
   %div(class="leftbar__user")
-    %p(class="leftbar__user__name") 
+    %p(class="leftbar__user__name")
       =current_user.name
     %div(class="leftbar__user__link")
-      = link_to "", "/", class: "fa fa-edit"
+      = link_to "", new_group_path, class: "fa fa-edit"
       = link_to "", edit_user_path(current_user.id), class: "fa fa-cog"
 
   %div(class="leftbar__group")
-    %div(class="leftbar__group__content")
-      %p(class="leftbar__group__content__name") グループ名
-      %p(class="leftbar__group__content__comment") 先頭コメント
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group), class: "leftbar__group__link" do
+        %div(class="leftbar__group__link__content")
+          %div(class="leftbar__group__link__content__name")
+            = group.name
+          %p(class="leftbar__group__link__content__comment") メッセージはまだありません。
