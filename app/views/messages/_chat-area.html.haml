@@ -1,16 +1,12 @@
 %div(class="chat-area")
   %div(class="chat-area__group")
     %div(class="chat-area__group__top")
-      %p(class="chat-area__group__top__name") グループ名
+      %p(class="chat-area__group__top__name") = group.name
       = link_to "Edit", "/", class: "chat-area__group__top__edit-btn"
     %p(class="chat-area__group__member-name") Member：メンバー名
 
   %div(class="chat-area__post")
-    %div(class="chat-area__post__message")
-      %div(class="chat-area__post__message__contributor")
-        %p(class="chat-area__post__message__contributor__name") 投稿者名
-        %p(class="chat-area__post__message__contributor__date") 投稿日時
-      %p(class="chat-area__post__message__text") 投稿内容
+    = render partial: 'message', collection: @messages
 
   %div(class="chat-footer")
     = form_for [@group, @message] do |f|

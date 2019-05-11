@@ -1,0 +1,10 @@
+%div(class="chat-area__post__message")
+  %div(class="chat-area__post__message__contributor")
+    %p(class="chat-area__post__message__contributor__name")
+      = message.user.name
+    %p(class="chat-area__post__message__contributor__date")
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  %p(class="chat-area__post__message__text")
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url if message.image.present?
