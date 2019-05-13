@@ -3,7 +3,9 @@
     %div(class="chat-area__group__top")
       %p(class="chat-area__group__top__name") = group.name
       = link_to "Edit", "/", class: "chat-area__group__top__edit-btn"
-    %p(class="chat-area__group__member-name") Member：メンバー名
+    %p(class="chat-area__group__member-name") Member：
+      - @group.users.each do |user|
+        = user.name
 
   %div(class="chat-area__post")
     = render partial: 'message', collection: @messages
