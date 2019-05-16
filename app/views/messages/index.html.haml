@@ -5,16 +5,18 @@
       %div(class="chat-area__group__top")
         %div(class="chat-area__group__top__name")
           = @group.name
-        = link_to "Edit", "/", class: "chat-area__group__top__edit-btn"
-      %div(class="chat-area__group__member-name") Member：
-      - @group.users.each do |group|
-        = group.name
-
-    %div(class="chat-area__post")
-      = render partial: 'message', collection: @messages
+        = link_to "Edit", edit_group_path(@group), class: "chat-area__group__top__edit-btn"
+      %div(class="chat-area__group__bottom")
+        %div(class="chat-area__group__bottom__member-name") Member：
+        %div
+          - @group.users.each do |user|
+            = user.name
+    %div(class="chat-area__post-area")
+      %div(class="chat-area__post-area__post")
+        = render partial: 'message', collection: @messages
 
     %div(class="chat-footer")
-      = form_for [@group, @message] do |f|
+      = form_for([@group, @message], html: {id: "chat-form"}, enctype: "multipart/form-data", data: {remote: true}) do |f|
         %div(class="chat-footer__box")
           %div(class="chat-footer__box__form")
             = f.text_field :content, class: "chat-footer__box__form__text", placeholder: 'type a message'
