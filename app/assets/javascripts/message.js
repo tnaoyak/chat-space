@@ -89,8 +89,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $(".chat-area__post-area__post").append(html);
-      $(".chat-footer__box__form__text").val("");
-      $(".chat-footer__box__form__icon__btn").val("");
+      $("#chat-form")[0].reset();
       $('.chat-area__post-area__post').animate({ scrollTop: $('.chat-area__post-area__post')[0].scrollHeight });
     })
     .fail(function(){
