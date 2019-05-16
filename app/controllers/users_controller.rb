@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_group
 
   def index
-    @users = @group.users.where("user.name LIKE(?)", "%#{params[:keyword]}%")
+    @users = User.where("name LIKE(?)", "%#{params[:keyword]}%")
+    # @users = users_list.map { |u| u[:name] }
     respond_to do |format|
       format.html
       format.json
@@ -25,7 +25,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 
-  def set_group
-    @group = Group.find(params[:group_id])
-  end
 end
