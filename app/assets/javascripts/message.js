@@ -1,9 +1,9 @@
 $(function(){
 
   function buildHTML(message){
-    var html = `<div class="chat-area__post__message">
-                  <div class="chat-area__post__message__contributor">
-                    <p class="chat-area__post__message__contributor__name">
+    var html = `<div class="chat-area__post-area__post__message">
+                  <div class="chat-area__post-area__post__message__contributor">
+                    <p class="chat-area__post-area__post__message__contributor__name">
                       ${message.user_name}
                     </p>`
 
@@ -54,11 +54,11 @@ $(function(){
 
       return ret;
   }
-    html += `<div class="chat-area__post__message__contributor__date">
+    html += `<div class="chat-area__post-area__post__message__contributor__date">
                 ${datetostr(new Date(message.created_at), 'Y/MM/DD hh:mm', false)}
             </div>
           </div>
-          <di class="chat-area__post__message__text">`
+          <di class="chat-area__post-area__post__message__text">`
 
 
     if(message.content) {
@@ -88,10 +88,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $(".chat-area__post").append(html);
+      $(".chat-area__post-area__post").append(html);
       $(".chat-footer__box__form__text").val("");
       $(".chat-footer__box__form__icon__btn").val("");
-      $('.chat-area__post').animate({ scrollTop: $('.chat-area__post')[0].scrollHeight });
+      $('.chat-area__post-area__post').animate({ scrollTop: $('.chat-area__post-area__post')[0].scrollHeight });
     })
     .fail(function(){
       alert("メッセージを入力してください。");

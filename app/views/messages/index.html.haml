@@ -6,13 +6,13 @@
         %div(class="chat-area__group__top__name")
           = @group.name
         = link_to "Edit", edit_group_path(@group), class: "chat-area__group__top__edit-btn"
-      %div(class="aa")
-        %div(class="chat-area__group__member-name") Member：
+      %div(class="chat-area__group__bottom")
+        %div(class="chat-area__group__bottom__member-name") Member：
         %div
           - @group.users.each do |user|
             = user.name
-    %div(class="aaa")
-      %div(class="chat-area__post")
+    %div(class="chat-area__post-area")
+      %div(class="chat-area__post-area__post")
         = render partial: 'message', collection: @messages
 
     %div(class="chat-footer")
