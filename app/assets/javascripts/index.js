@@ -41,7 +41,6 @@ $(function() {
 
       $(document).on("click", ".chat-group-user__btn--add", function(){ // 「追加」がクリックされた時
         var add_event = $(this).parent();                               // 「追加」の親要素取得
-        console.log(add_event);
         $(add_event).remove();
         var select_id = $(this).attr("data-user-id");
         var select_name = $(this).attr("data-user-name");
