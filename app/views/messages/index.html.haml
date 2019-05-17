@@ -5,10 +5,10 @@
       %div(class="chat-area__group__top")
         %div(class="chat-area__group__top__name")
           = @group.name
-        = link_to "Edit", edit_group_path(@group), class: "chat-area__group__top__edit-btn"
+        = link_to("Edit", edit_group_path(@group), class: "chat-area__group__top__edit-btn", data: { turbolinks: false })
       %div(class="chat-area__group__bottom")
         %div(class="chat-area__group__bottom__member-name") Member：
-        %div
+        %div(class="chat-area__group__bottom__member-name")
           - @group.users.each do |user|
             = user.name
     %div(class="chat-area__post-area")
