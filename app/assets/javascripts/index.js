@@ -20,7 +20,7 @@ $(function() {
   var add_result = $("#chat-group-users");
 
   function appendMember(user) {
-    var html_add = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+    var html_add = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user.id}'>
                       <input name='group[user_ids][]' type='hidden' value='${user.id}'>
                       <p class='chat-group-user__name'>${user.name}</p>
                       <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
