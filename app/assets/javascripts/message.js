@@ -1,7 +1,7 @@
 $(function(){
 
   function buildHTML(message){
-    var html = `<div class="chat-area__post-area__post__message">
+    var html = `<div class="chat-area__post-area__post__message" data-message-id="${message.id}">
                   <div class="chat-area__post-area__post__message__contributor">
                     <p class="chat-area__post-area__post__message__contributor__name">
                       ${message.user_name}
