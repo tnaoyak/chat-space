@@ -27,13 +27,12 @@
       / = f.collection_check_boxes :user_ids, User.all, :id, :name
 
       #chat-group-users
-        .chat-group-user.clearfix{id: 'chat-group-user-22'}
-          - @group.users.each do |user|
-            .chat-group-user.clearfix.js-chat-member{id: 'chat-group-user-8'}
-              %input{name: 'group[user_ids][]', type: 'hidden', value: "#{user.id}"}
-                %p.chat-group-user__name
-                  = user.name
-                  .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+        - @group.users.each do |user|
+          .chat-group-user.clearfix.js-chat-member{id: 'chat-group-user-8'}
+            %input{name: 'group[user_ids][]', type: 'hidden', value: "#{user.id}"}
+              %p.chat-group-user__name
+                = user.name
+                .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
