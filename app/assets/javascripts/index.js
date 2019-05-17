@@ -17,7 +17,7 @@ $(function() {
   }
 
   // 追加押した後メンバー欄に表示する処理
-  var add_result = $("#chat-group-user-22");
+  var add_result = $("#chat-group-users");
 
   function appendMember(user) {
     var html_add = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
