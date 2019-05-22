@@ -131,5 +131,10 @@ $(function(){
     });
   };
   //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
-  setInterval(reloadMessages, 5000);
+  $(function(){
+    if(location.href.match(/\/groups\/\d+\/messages/)){
+      setInterval(reloadMessages, 5000);
+    }
+  })
+
 });
