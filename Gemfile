@@ -70,3 +70,6 @@ gem 'mini_magick'
 gem 'remotipart'
 gem 'pry-byebug'
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
