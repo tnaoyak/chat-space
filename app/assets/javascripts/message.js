@@ -1,7 +1,7 @@
 $(function(){
 
   function buildHTML(message){
-    var html = `<div class="chat-area__post-area__post__message">
+    var html = `<div class="chat-area__post-area__post__message" data-message-id="${message.id}">
                   <div class="chat-area__post-area__post__message__contributor">
                     <p class="chat-area__post-area__post__message__contributor__name">
                       ${message.user_name}
@@ -73,6 +73,7 @@ $(function(){
     return html;
   }
 
+  // 新規投稿の非同期通信処理
   $("#chat-form").on("submit", function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -97,4 +98,43 @@ $(function(){
     })
     return false; // falseを返すことでformのPOSTを止めて、createアクションのsaveとダブってデータベースに二重で投稿されないようにしている
   })
+
+  // 自動更新に関する関数
+  var reloadMessages = function() {
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    var last_message_id = $(".chat-area__post-area__post__message").last().data("message-id");
+    $.ajax({
+      //ルーティングで設定した通りのURLを指定
+      url: "././api/messages",
+      //ルーティングで設定した通りhttpメソッドをgetに指定
+      type: 'GET',
+      dataType: 'json',
+      //dataオプションでリクエストに値を含める
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      //追加するHTMLの入れ物を作る
+      // var insertHTML = '';
+      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+      messages.forEach(function(message){         // forEachメソッドを用いて、userの中身の数だけappendProduct関数を呼び出す
+        var html = buildHTML(message);
+        $(".chat-area__post-area__post").append(html);
+        $('.chat-area__post-area__post').animate({ scrollTop: $('.chat-area__post-area__post')[0].scrollHeight });
+      });
+      //メッセージが入ったHTMLを取得
+
+      //メッセージを追加
+
+    })
+    .fail(function() {
+      alert("自動更新エラーl");
+    });
+  };
+  //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
+  $(function(){
+    if(location.href.match(/\/groups\/\d+\/messages/)){
+      setInterval(reloadMessages, 5000);
+    }
+  })
+
 });
