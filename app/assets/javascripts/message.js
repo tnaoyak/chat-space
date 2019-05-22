@@ -127,7 +127,7 @@ $(function(){
 
     })
     .fail(function() {
-      console.log('error');
+      alert("自動更新エラー");
     });
   };
   //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
