@@ -6,5 +6,4 @@ class Api::MessagesController < ApplicationController
       format.json { @messages = Message.where('id > ?', params[:id]) }
     end
   end
-
 end
