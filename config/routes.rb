@@ -10,3 +10,31 @@ Rails.application.routes.draw do
     end
   end
 end
+
+resources :users do
+  collection do
+    get 'login'
+    get 'signup'
+    get 'user_registration'
+    get 'sms_confirmation'
+    get 'address_registration'
+    get 'card_registration'
+    get 'registration_complete'
+  end
+end
+class UsersController < ApplicationController
+  def login
+  end
+  def signup
+  end
+  def user_registration
+  end
+  def sms_confirmation
+  end
+  def address_registration
+  end
+  def card_registration
+  end
+  def registration_complete
+  end
+end
